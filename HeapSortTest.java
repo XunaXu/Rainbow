@@ -36,11 +36,11 @@ public class HeapSortTest{
     }
 }
 
-class HeapSort{
+class HeapSortImpl{
     private int[] arr;
     
     //constructor
-    public HeapSort(int[] arr){
+    public HeapSortImpl(int[] arr){
         this.arr = arr;
     }
     
@@ -59,8 +59,7 @@ class HeapSort{
     
     //heap sort
     public int[] sort(){
-        this.buildMaxHeal();
-        
+        this.buildMaxHeap();
     }
 }
 
