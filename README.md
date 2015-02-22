@@ -1,3 +1,3 @@
 # My rainbow bag 
 
-It has a lot of coding goodies, like cute algorithms, new cool languages, ..., things which interest me.
+It has a lot of coding goodies, like cute algorithms, new cool languages, ..., things that interest me.
