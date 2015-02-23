@@ -29,9 +29,9 @@ public class HeapSortAscTest{
     }
 
 	public static void test(int[] original, int[] expected){
-		HeapSortAsc heapSort = new HeapSortAsc();
+		HeapSortAsc heapSort = new HeapSortAsc(original);
 		int[] originalCopy = original.clone();  //not ideal due to the in-place sorting alg
-		int[] result = heapSort.sortAsc(original);
+		int[] result = heapSort.sortAsc();
 		System.out.println(Arrays.equals(expected, result)+" "+Arrays.toString(originalCopy)+" => "+Arrays.toString(result)); 
 	}
 }
@@ -39,15 +39,15 @@ public class HeapSortAscTest{
 class HeapSortAsc{
     private int[] arr;
     
-    public HeapSortAsc(){
+    public HeapSortAsc(int[] arr){
+    	this.arr=arr;
     }
     
     //heap sort in an ascending order
 	//swap the first element to the last leaf
 	//run build max heap again, till everything is sorted
 	//O(NLogN) complexity
-    public int[] sortAsc(int[] arr){
-        this.arr = arr;
+    public int[] sortAsc(){
 		int temp=0;
 
 		for(int i=arr.length; i>0; i--){
