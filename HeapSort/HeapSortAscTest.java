@@ -1,7 +1,9 @@
-//Heap Sort in an ascending order (an in-place sorting algorithm)
-//1. Build a max heap from bottom up
-//2. Sort the array  
-//@ Xuna Xu [78756e61@gmail.com] Happy Coding!
+/*
+Heap Sort in an ascending order (an in-place sorting algorithm)
+1. Build a max heap from bottom up
+2. Sort the array  
+@ Xuna Xu [78756e61@gmail.com] Feel free to email. Happy Coding!
+*/
 
 import java.util.Arrays;
 
