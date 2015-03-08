@@ -36,14 +36,14 @@ public class InsertionSortTest{
 	}
 }
 
-class InsertionSort{
-	public InsertionSort(){
+class InsertionSortAsc{
+	public InsertionSortAsc(){
 
 	}
 }
 
 
-class BinarySearch{
+class ModofiedBinarySearch{
 	int[] arr;
 	int target;	
 
@@ -51,18 +51,26 @@ class BinarySearch{
 		this.arr=arr;
 	}
 
-	public boolean search(int target){
+	//search the index of an element that will be swapped with the target.
+	public int search(int target){
 		int length=arr.length;
 		return helpMeSearch(0, length-1, target);		
 	}
-
-	private boolean helpMeSearch(int begin, int end, int target){
+	
+	private int helpMeSearch(int begin, int end, int target){
 		//reach the end, not found. After searching the last one element, beign will be greater than end no matter to the left or right. 
 		if(begin>end){
 			return false;
 		}	
 
 		int mid=((end-begin)/2)+begin;
+		
+		if(arr[mid]>target){
+			if(mid-1>=0 && arr[mid-1]<=target){
+				return mid;
+			}
+		}
+		
 		
 		//found during the search process
 		if(arr[mid]==target){
