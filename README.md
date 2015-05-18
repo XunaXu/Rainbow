@@ -1,3 +1,1 @@
-Rainbow
-
-test 3
+Rainbow - Personal Git Repository 
