@@ -1,1 +1,1 @@
-Rainbow - Personal Git Repository 
+Rainbow - Personal Git Repository - all sorts of stuff that interests me.
