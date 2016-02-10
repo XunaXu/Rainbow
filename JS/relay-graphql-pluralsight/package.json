@@ -1,0 +1,19 @@
+{
+  "name": "relay-graphql-pluralsight",
+  "version": "1.0.0",
+  "description": "learning relay graphql",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0"
+  }
+}
