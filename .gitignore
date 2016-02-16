@@ -2,3 +2,6 @@
 /JS/redux-todomvc/node_modules
 /JS/flux-todomvc/js/bundle.js
 /JS/flux-todomvc/js/bundle.min.js
+/JS/relay-graphql-pluralsight/public/bundle.js
+/JS/relay-graphql-pluralsight/public/bundle.js.map
+/JS/relay-graphql-pluralsight/node_modules
