@@ -8,7 +8,7 @@ app.use(express.static('public'))
 
 //console.log(process.env);
 
-let MONGO_URL="mongodb://testing_relay_graphql:password@ds011288.mongolab.com:11288/relay_graphql"
+let MONGO_URL="mongodb://testing_relay_graphql:+testing_relay_graphql+@ds011288.mongolab.com:11288/relay_graphql"
 let db;
 
 MongoClient.connect(MONGO_URL, (err, database) => {
