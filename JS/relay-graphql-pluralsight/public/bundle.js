@@ -20234,7 +20234,7 @@
 		_createClass(Main, [{
 			key: "componentWillMount",
 			value: function componentWillMount() {
-				debugger;
+				//debugger
 			}
 		}, {
 			key: "componentWillUnmount",
@@ -20256,9 +20256,21 @@
 		}, {
 			key: "render",
 			value: function render() {
+				console.log(this.state.links);
+				var content = this.state.links.map(function (link) {
+					return _react2.default.createElement(
+						"li",
+						{ key: link._id },
+						_react2.default.createElement(
+							"a",
+							{ href: link.url },
+							link.title
+						)
+					);
+				});
 				return _react2.default.createElement(
 					"div",
-					{ id: "links" },
+					null,
 					_react2.default.createElement(
 						"h3",
 						null,
@@ -20267,16 +20279,7 @@
 					_react2.default.createElement(
 						"ul",
 						null,
-						_react2.default.createElement(
-							"li",
-							null,
-							"Link.."
-						),
-						_react2.default.createElement(
-							"li",
-							null,
-							"Link..."
-						)
+						content
 					)
 				);
 			}
@@ -21960,8 +21963,8 @@
 		receiveLinks: function receiveLinks(links) {
 			console.log("2. In server actions");
 			_AppDispatcher2.default.dispatch({
-				actionTypes: _Constants.ActionTypes.RECEIVE_LINKS,
-				links: ''
+				actionType: _Constants.ActionTypes.RECEIVE_LINKS,
+				links: links
 			});
 		}
 	};

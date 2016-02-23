@@ -12,7 +12,7 @@ export default class Main extends React.Component {
 		this.onChange = this.onChange.bind(this)
 	}
 	componentWillMount() {
-		debugger
+		//debugger
 	}
 	componentWillUnmount() {
 		LinkStore.removeListener("change", this.onChange)
@@ -26,12 +26,15 @@ export default class Main extends React.Component {
 		this.setState(_getAppState());
 	}
 	render() {
+		console.log(this.state.links);
+		let content = this.state.links.map(link => {
+			return <li key={link._id}><a href={link.url}>{link.title}</a></li>;
+		})
 		return (  
-		<div id="links">
+		<div>
 	        <h3>Links</h3>
 	        <ul>
-	            <li>Link..</li>
-	            <li>Link...</li>
+	        	{content}
 	        </ul>
     	</div>
     )}
