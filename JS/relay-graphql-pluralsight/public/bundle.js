@@ -20311,11 +20311,22 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// let API = {
+	// 	fetchLinks() {
+	// 		console.log("1. In API");
+	// 		get("data/links").done(resp => {
+	// 			ServerActions.receiveLinks(resp)
+	// 		});
+	// 	}
+	// }
+	
 	var API = {
 		fetchLinks: function fetchLinks() {
 			console.log("1. In API");
-			(0, _jquery.get)("data/links").done(function (resp) {
-				_ServerActions2.default.receiveLinks(resp);
+			(0, _jquery.post)("/graphql", {
+				query: "{\n\t\t\t\t  links{\n\t\t\t\t    _id,\n\t\t\t\t    title,\n\t\t\t\t    url\n\t\t\t\t  }\n\t\t\t\t}"
+			}).done(function (resp) {
+				_ServerActions2.default.receiveLinks(resp.data.links);
 			});
 		}
 	};
