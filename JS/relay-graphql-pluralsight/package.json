@@ -4,12 +4,13 @@
   "description": "learning relay graphql",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js --exec babel-node --presets react,es2015",
+    "start": "nodemon server.js --exec babel-node --presets react,es2015,stage-0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-stage-0": "^6.5.0",
     "express": "^4.13.4",
     "express-graphql": "^0.4.9",
     "graphql": "^0.4.18"
