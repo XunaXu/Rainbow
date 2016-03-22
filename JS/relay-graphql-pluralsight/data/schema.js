@@ -1,52 +1,3 @@
-// import {
-// 	GraphQLSchema,
-// 	GraphQLObjectType,
-// 	GraphQLInt,
-// 	GraphQLString,
-// 	GraphQLList
-// } from 'graphql';
-
-
-
-// let Schema = (db) => {
-// 	let store={}
-
-// 	let storeType = new GraphQLObjectType({
-// 		name: 'Store',
-// 		fields: ()=> ({
-// 			links: {
-// 				type: new GraphQLList(linkType),
-// 				resolve: () => db.collection("links").find({}).toArray()
-// 			}
-// 		})
-// 	}) 
-
-
-// 	let linkType = new GraphQLObjectType({
-// 		name: 'Link',
-// 		fields: ()=> ({
-// 			_id: {type: GraphQLString},
-// 			title: {type: GraphQLString},
-// 			url: {type: GraphQLString},
-// 		})
-// 	}) 
-
-// 	let schema = new GraphQLSchema ({
-// 		query: new GraphQLObjectType ({
-// 			name: 'Query',
-// 			fields: ()=>({
-// 				store: {
-// 					type: storeType,
-// 					resolve: () => store
-// 				}
-// 			})
-// 		})
-// 	})
-
-// 	return schema
-// }
-
-// export default Schema;
 
 import {
 	GraphQLSchema,
@@ -55,29 +6,71 @@ import {
 	GraphQLString,
 	GraphQLList,
 	GraphQLNonNull,
-	GraphQLID
+	GraphQLID,
+	GraphQLInputObjectType
 } from 'graphql';
 
 
 import {
+	globalIdField,
+	fromGlobalId, //node defition
+	nodeDefinitions, //node defition
 	connectionDefinitions,
 	connectionArgs,
-	connectionFromPromisedArray
+	connectionFromPromisedArray,
+	mutationWithClientMutationId //mutation
 } from 'graphql-relay';
 
 
 let Schema = (db) => {
-	let store={}
+	class Store {};
+	let store= new Store();
+
+
+//--node defition
+	let nodeDefs = nodeDefinitions(
+		(globalId) =>{
+			let {type} = fromGlobalId(globalId);
+			if(type === 'Store'){
+				return store;
+			}
+			return null;
+		},
+		(obj) => {
+			if(obj instanceof Store){
+				return storeType;
+			}
+			return null;
+		}
+	);
+
+///--
 
 	let storeType = new GraphQLObjectType({
 		name: 'Store',
 		fields: ()=> ({
+			id: globalIdField('Store'),
 			linkConnection: {
 				type: linkConnection.connectionType,
-				args: connectionArgs, 
-				resolve: (_, args) => connectionFromPromisedArray(db.collection("links").find({}).toArray(), args)
+				args: {
+					...connectionArgs, 
+					query: {type: GraphQLString}
+				},
+				resolve: (_, args) => {
+					let findParams = {};
+					if(args.query){
+						findParams.title = new RegExp(args.query, 'i');
+					}
+					return connectionFromPromisedArray(
+					db.collection("links")
+						.find(findParams)
+						.sort({createdAt: -1})
+						.limit(args.first).toArray(), 
+					args)
+				}
 			}
-		})
+		}),
+		interfaces: [nodeDefs.nodeInterface] //node defition
 	}) 
 
 	let linkType = new GraphQLObjectType({
@@ -89,6 +82,10 @@ let Schema = (db) => {
 			},
 			title: {type: GraphQLString},
 			url: {type: GraphQLString},
+			createdAt: {
+				type: GraphQLString,
+				resolve: (obj) => new Date(obj.createdAt)
+			}
 		})
 	}) 
 
@@ -98,16 +95,52 @@ let Schema = (db) => {
 	})
 
 
+//mutation
+	let createLinkMutation = mutationWithClientMutationId({
+		name: 'CreateLink',
+		inputFields:{
+			title: {type: new GraphQLNonNull(GraphQLString)},
+			url: {type: new GraphQLNonNull(GraphQLString)}
+		},
+		outputFields:{
+			linkEdge: {
+				type: linkConnection.edgeType,
+				resolve: (obj) => ({node:obj.ops[0], cursor: obj.insertedId})
+			},
+			store:{
+				type: storeType,
+				resolve: () => store
+			}
+		},
+		mutateAndGetPayload: ({title, url})=>{
+			return db.collection('links').insertOne({
+				title, 
+				url,
+				createdAt: Date.now()
+			});
+		}
+	})
+//--
+
 	let schema = new GraphQLSchema ({
 		query: new GraphQLObjectType ({
 			name: 'Query',
 			fields: ()=>({
+				node: nodeDefs.nodeField, //node defition
 				store: {
 					type: storeType,
 					resolve: () => store
 				}
 			})
+		}),
+		//mutation
+		mutation: new GraphQLObjectType ({  
+			name: 'Mutation',
+			fields: ()=>({
+				createLink: createLinkMutation
+			})
 		})
+		//--
 	})
 
 	return schema
