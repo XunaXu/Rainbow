@@ -8,14 +8,21 @@ class Main extends React.Component {
 	constructor(props){
 		super(props);
 		this.search = debounce(this.search, 300);
-	}
+	};
+	state = {
+		query: ''
+	};
+	handleInputQuery= (e)=>{
+		this.setState({query: e.target.value});
+		this.search();
+	};
 	setLimit = (e)=>{
 		let newLimit = Number(e.target.value);
 		this.props.relay.setVariables({limit: newLimit})
 	}
-	search = (e)=>{
-		let query = e.target.value;
-		this.props.relay.setVariables({query: query})
+	search = ()=>{
+		console.log('waf');
+		this.props.relay.setVariables({query: this.state.query})
 	}
 	handleSubmit = (e)=>{
 		e.preventDefault;
@@ -42,6 +49,7 @@ class Main extends React.Component {
 	        	<input type='text' placeholder='url' ref='newUrl' />
 	        	<button type='submit'>Add</button>
 	        </form>
+	        <span>Display:</span>
 	        <select onChange={this.setLimit}
 	        	defaultValue = {this.props.relay.variables.limit}
 	        	>
@@ -49,7 +57,7 @@ class Main extends React.Component {
 	        	<option value='5'>5</option>
 	        	<option value='20'>20</option>
 	        </select>
-	       	<input type='text' placeholder='search' onChange={this.search}/>
+	       	<input type='text' placeholder='search' value={this.state.query} onChange={this.handleInputQuery}/>
 	        <ul>
 	        	{content}
 	        </ul>
