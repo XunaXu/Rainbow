@@ -1,0 +1,74 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+source: source
+destination: _site
+sass:
+  sass_dir: _sass
+  style: expanded # compressed # expanded
+
+# permalink and highlighter
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : pygments
+
+
+# SEO settings
+title: Xuna Xu
+description: "Xuna Xu's webpage"
+keywords: "blog, tech, programmer, coding, coder, web, geek, github"
+
+# Site settings
+url: https://xunaxu.github.io
+baseurl: ""
+paginate_path: /page:num
+gems: [jekyll-paginate, jemoji]
+paginate: 5
+
+
+# Dynamic Text on the Header 
+dynamic-typing: true
+shuffle: true # Shuffle the lines.
+loop: true
+loop-count: false # Set False for infinite loop, or set any number for finite loop.
+type-speed: 10
+start-delay: 200
+delete-delay: 5000
+lines: # You can add HTML Tags in the Text
+  - text: "Tell me and I forget. Teach me and I remember. Invole me and I learn. -Benjamin F"
+  - text: "It does not matter how slowly you go as long as you do not stop -Confucius."
+
+
+
+# Author settings
+author:
+  name      : Xuna Xu
+  job       : Software Engineer
+  email     : 78756e61@gmail.com
+  url       : http://xunaxu.com
+  github    : http://github.com/xunaxu
+  twitter   : http://twitter.com/xuna_x
+  linkedin  : https://au.linkedin.com/in/xuna-xu-8a135094
+
+google_analytics: UA-81923223-1
+#repo: http://github.com/xunaxu/jekyll-iris
+
+# comments
+comments: true
+disqus_shortname: "xunaxu"
+
+#share
+email-share: true
+fb-share: true
+twitter-share: true
+linkedin-share: true
+reddit-share: false
+google-plus-share: true
+tumblr-share: false
+pinterest-share: false
+pocket-share: false
+vkontakte-share: false

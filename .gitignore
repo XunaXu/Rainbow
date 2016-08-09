@@ -3,3 +3,6 @@
 **/bundle.min.js
 **/bundle.js.map
 **/npm-debug.log
+**/.DS_Store
+.DS_Store
+**/_site/
