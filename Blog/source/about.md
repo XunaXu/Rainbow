@@ -31,7 +31,7 @@ Apart from programming, I am an atheist, love pretty much all documentaries, som
 
 ### Extra
 
-I used to think I can be whoever I wanna be. Gradually over time I notice I couldn't be anybody else but only myself, and nobody else in the world can be me. I am still on a journey to learn who I am, luckily I can say 'I know myself a bit more than I used to.' It would be a terrible feeling if I know less. I believe how we would deal with situations defines who we are, and we have abilities to change how we perceive the world. <br><br>
+I used to think I can be whoever I wanna be. Gradually over time I notice I couldn't be anybody else but only myself, and nobody else in the world can be me. I am still on a journey to learn who I am, luckily I can say 'I know myself a bit more than I used to.' It would be a terrible feeling if I know less.<br><br>
 
 
 ---
