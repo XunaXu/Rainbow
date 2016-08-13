@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-### Hey There!   
+### Hi There!   
 
 Thanks for taking some time to get to know me. 
 
@@ -12,7 +12,7 @@ I am not a writer, not even a terrible one. I am a programmer. I enjoy writing c
 
 
 
-### Became A Programmer
+### Becoming A Programmer
 
 Math was never hard for me, so its not a surprise that I enjoy programming. I got into it by accident,  Ooops! After one year of a commerce degree at the university, none of it made any sense to me. I always like visual arts, but I was hesitant to pursue it as a career, so I thought it would be good to combine the art and math together. Guess what? A bachelor of computer graphics from the engineering department was on offer for the first time (they have stopped the degree after several years). 75% programming, and 25% design courses sounded too great.<br><br>
 
@@ -40,7 +40,7 @@ You can find out more about my carrer and education on [LinkedIn](https://au.lin
 
 You can follow me on [Twitter](http://twitter.com/xuna_x) and [GitHub](http://github.com/xunaxu)
 
-Like this theme? download for free! [here](https://github.com/XunaXu/Jekyll-Iris)
+Like this theme? [Download](https://github.com/XunaXu/Jekyll-Iris) for free! 
 
 
 

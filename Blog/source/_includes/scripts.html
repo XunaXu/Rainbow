@@ -1,7 +1,6 @@
 
-<script src="{{ "/assets/js/jquery-2.1.1.js" | prepend: site.baseurl }}"></script>
-<!-- <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
- --><script src="{{ "/assets/js/typed.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/jquery-3.1.0.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/typed.min.js" | prepend: site.baseurl }}"></script>
   <script type="text/javascript">
 
   var myQuotes =  new Array();
@@ -17,7 +16,7 @@
       loop: {{ site..loop }},
       loopCount: {{ site.loop-count }},
       cursorChar: "|"
-    });
+    });    
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -27,4 +26,11 @@
   ga('create', '{{site.google_analytics}}', 'auto');
   ga('send', 'pageview');
 
-  </script>
+</script>
+{% if site.comments %}
+<script id="dsq-count-scr" src="{{site.disqus_shortname | prepend:'//' | append: '.disqus.com/count.js'}}" async></script>
+<script type="text/javascript">
+  DISQUSWIDGETS.getCount({reset: true});
+</script>
+{% endif %}
+

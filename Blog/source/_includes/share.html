@@ -4,21 +4,21 @@
   <ul class="social clearfix">
     {% if site.email-share %}
       <li class="rrssb-email">
-        <a href="mailto:?subject={{page.title}}&body={{site.url}}{{site.baseurl}}{{page.url}}" data-proofer-ignore title='email'>
+        <a href="mailto:?subject={{page.title}}&amp;body={{site.url}}{{site.baseurl}}{{page.url}}" data-proofer-ignore title='email'>
 <i class="icon icon-share"></i>
         </a>
       </li>
     {% endif %}
     {% if site.fb-share %}
       <li class="rrssb-facebook">
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{site.baseurl}}{{page.url}}&title={{page.title}}" class="popup">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{site.url}}{{site.baseurl}}{{page.url}}&amp;title={{page.title}}" class="popup">
         <i class="icon icon-facebook-rounded"></i>
         </a>
       </li>
     {% endif %}
     {% if site.twitter-share %}
       <li class="rrssb-twitter">
-        <a href="https://twitter.com/share?url={{site.url}}{{site.baseurl}}{{page.url}}&text={{page.title}}"
+        <a href="https://twitter.com/share?url={{site.url}}{{site.baseurl}}{{page.url}}&amp;text={{page.title}}"
         class="popup">
         <i class="icon icon-twitter"></i>
         </a>

@@ -23,7 +23,7 @@ description: "Xuna Xu's webpage"
 keywords: "blog, tech, programmer, coding, coder, web, geek, github"
 
 # Site settings
-url: https://xunaxu.github.io
+url: http://www.xunaxu.com
 baseurl: ""
 paginate_path: /page:num
 gems: [jekyll-paginate, jemoji]
@@ -39,8 +39,8 @@ type-speed: 10
 start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
-  - text: "Tell me and I forget. Teach me and I remember. Involve me and I learn. -Benjamin F"
-  - text: "It does not matter how slowly you go as long as you do not stop -Confucius."
+  - text: "<span>Learning is not knowledge, it is programming the mind. ― Joseph Rain</span>"
+  - text: "<span>We are writing our own karma, I mean my test cases. ― ahkeno</span>"
 
 
 
@@ -49,7 +49,7 @@ author:
   name      : Xuna Xu
   job       : Software Engineer
   email     : 78756e61@gmail.com
-  url       : http://xunaxu.com
+  url       : http://www.xunaxu.com
   github    : http://github.com/xunaxu
   twitter   : http://twitter.com/xuna_x
   linkedin  : https://au.linkedin.com/in/xuna-xu-8a135094

@@ -5,7 +5,7 @@ body {
   font-weight: $font-weight-normal;
   color: $base-font-color;
 
-  @include media($max-tablet) {
+  @include media($max-tablet-large) {
     font-size: $large-font-size;
   }
 }
