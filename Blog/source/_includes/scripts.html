@@ -1,6 +1,6 @@
-
 <script src="{{ "/assets/js/jquery-3.1.0.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/typed.min.js" | prepend: site.baseurl }}"></script>
+
   <script type="text/javascript">
 
   var myQuotes =  new Array();
@@ -29,8 +29,5 @@
 </script>
 {% if site.comments %}
 <script id="dsq-count-scr" src="{{site.disqus_shortname | prepend:'//' | append: '.disqus.com/count.js'}}" async></script>
-<script type="text/javascript">
-  DISQUSWIDGETS.getCount({reset: true});
-</script>
 {% endif %}
 
