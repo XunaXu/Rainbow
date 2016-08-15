@@ -16,9 +16,10 @@ subtitle: what I'm writing..
         <h1 class="post-title">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h1>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; {{ post.content | number_of_words | divided_by:150 }} Min Read &nbsp;&nbsp; | &nbsp;&nbsp;
-          </span>
-          <span class="disqus-comment-count post-meta" data-disqus-identifier="{{post.title}}"></span>
+        <div class="post-meta">
+        {{ post.date | date: "%b %-d, %Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; {{ post.content | number_of_words | divided_by:150 }} Min Read &nbsp;&nbsp; | &nbsp;&nbsp;
+          <span class="disqus-comment-count" data-disqus-identifier="{{post.title}}"></span>
+        </div>
       </header>
 
       <p>{{ post.content | strip_html | truncatewords: 56 }} <a href="{{ post.url | prepend: site.baseurl }}" title="Permalink to: {{ post.title }}" class="read-more button_outline">Read more</a></p>

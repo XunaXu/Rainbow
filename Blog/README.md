@@ -41,7 +41,7 @@ Access, [localhost:4000/](http://localhost:4000/)
 
 Change the color theme in the file located at source/_sass/_variables.scss 
 * $primary-color: #7E57C2; (as violet) 
-* $highlight-color: #F48FB1; (as pink)
+* $secondary-color: #F48FB1; (as pink)
 
 ---
 ### Credits:

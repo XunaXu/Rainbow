@@ -1,0 +1,41 @@
+.share{
+  width: 100%;
+  border-top: 1px solid $medium-white-color;
+  text-align: center;
+  padding-top: $base-spacing;
+
+	.social {
+	  li {
+	    display: inline-block;
+	    margin-right: 12px;
+	  }
+
+	  a {
+	    @include transition(opacity .15s ease-in-out);
+	    color: $medium-gray-color;
+	    text-decoration: none;
+	      color: $primary-color;
+
+	    &:hover,
+	    &:focus,
+	    &:active {
+	      color: $secondary-color;
+	    }
+	  }
+
+	  .icon{
+	   	 font-size: 1.5em;
+	   }
+	}
+
+   @include media($max-tablet){
+   	.social {
+	  li {
+	    margin-right: 15px;
+	  }
+   	 	.icon{
+   	 		font-size: 1.6em;
+   	 	}
+   	 }
+   }
+}

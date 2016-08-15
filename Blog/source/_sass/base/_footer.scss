@@ -1,26 +1,21 @@
 
 .site-footer {
-  @extend %clearfix;
+  flex-direction: row;
+  justify-content: space-between;
+
   padding: $base-spacing 0;
   text-align: center;
-
-  .container {
-    padding-top: $base-spacing;
-    border-top: $base-border;
-  }
+  border-top: 1px solid $medium-white-color;
 
   p {
     margin-bottom: 5px;
   }
 
-  .social{
-    padding-top: 5px;
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .social {
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+
   li {
     display: inline-block;
     margin-right: 12px;
@@ -40,12 +35,13 @@
       &:hover,
       &:focus,
       &:active {
-        color: $highlight-color;
+        color: $secondary-color;
       }
     }
   
-
   .icon {
     font-size: 1.2rem;
   }
+}
+
 }
