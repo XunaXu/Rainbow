@@ -17,7 +17,7 @@ subtitle: what I'm writing..
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h1>
         <div class="post-meta">
-        {{ post.date | date: "%b %-d, %Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; {{ post.content | number_of_words | divided_by:150 }} Min Read &nbsp;&nbsp; | &nbsp;&nbsp;
+        {{ post.date | date: "%b %-d, %Y" }} &nbsp;|&nbsp; {{ post.content | number_of_words | divided_by:150 }} Min Read &nbsp; | &nbsp;
           <span class="disqus-comment-count" data-disqus-identifier="{{post.title}}"></span>
         </div>
       </header>
