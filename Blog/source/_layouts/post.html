@@ -6,10 +6,8 @@ layout: default
 
    <div class="post-title container">
     <div class="title">{{ page.title }}</div>
-    <div class="post-info flex-container">
-      <div class="post-meta">{{ page.date | date: "%b %-d, %Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; {{ page.content | number_of_words | divided_by:150 }} Min Read
-      </div>
-      {% include share.html %}
+      <div class="post-meta">{{ page.date | date: "%b %-d, %Y" }} &nbsp;&nbsp;|&nbsp;&nbsp; {{ page.content | number_of_words | divided_by:150 }} Min Read &nbsp;&nbsp; | &nbsp;&nbsp; 
+       <span class="disqus-comment-count" data-disqus-identifier="{{page.title}}"></span>
       </div>
    </div>
 
@@ -21,7 +19,7 @@ layout: default
 </article>
 
 
-  <div class="post-nav container flex-container">
+  <div class="post-nav container">
     {% if page.next.url %} 
       <a class="prev button_outline" href="{{ page.next.url | prepend: site.baseurl }}"><span>&laquo;&nbsp; Prev: {{ page.next.title }}</span>
     </a>
@@ -37,6 +35,8 @@ layout: default
     {% endif %} 
   </div>
 
+{% include share.html %}
+{% include subscribe.html %}
 
 {% include comments.html %}
 
