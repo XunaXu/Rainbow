@@ -66,9 +66,7 @@ email-share: true
 fb-share: true
 twitter-share: true
 linkedin-share: true
-reddit-share: false
+reddit-share: true
 google-plus-share: true
 tumblr-share: false
 pinterest-share: false
-pocket-share: false
-vkontakte-share: false
