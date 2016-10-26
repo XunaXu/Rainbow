@@ -12,9 +12,9 @@ sass:
   style: expanded # compressed # expanded
 
 # permalink and highlighter
-permalink   : /:year/:title/
-markdown    : kramdown
-highlighter : pygments
+permalink : /:year/:title/
+markdown  : kramdown  #define which markdown you wanna to use for your site.
+highlighter : rouge  #define which lighlighter you wanna to use for your code section.
 
 
 # SEO settings
@@ -22,15 +22,16 @@ title: Xuna Xu
 description: "Xuna Xu's webpage"
 keywords: "blog, tech, programmer, coding, coder, web, geek, github"
 
+
 # Site settings
 url: http://www.xunaxu.com
 baseurl: ""
 paginate_path: /page:num
-gems: [jekyll-paginate, jemoji]
+gems: [jekyll-paginate]
 paginate: 5
 
 
-# Dynamic Text on the Header 
+# Dynamic Text on the Header
 dynamic-typing: true
 shuffle: true # Shuffle the lines.
 loop: true
@@ -38,7 +39,7 @@ loop-count: false # Set False for infinite loop, or set any number for finite lo
 type-speed: 10
 start-delay: 200
 delete-delay: 5000
-lines: # You can add HTML Tags in the Text
+lines: # Keep the <span> attribute on! It makes the text working when resizing the screen
   - text: "<span>Learning is not knowledge, it is programming the mind. ― Joseph Rain</span>"
   - text: "<span>We are writing our own karma, I mean my test cases. ― ahkeno</span>"
 
@@ -49,24 +50,37 @@ author:
   name      : Xuna Xu
   job       : Software Engineer
   email     : 78756e61@gmail.com
-  url       : http://www.xunaxu.com
+  url       : http://xunaxu.github.io
   github    : http://github.com/xunaxu
   twitter   : http://twitter.com/xuna_x
   linkedin  : https://au.linkedin.com/in/xuna-xu-8a135094
+  avatar    : /assets/images/my_avatar.jpg
 
-google_analytics: UA-81923223-1
+# google analytics
+google_analytics: UA-81923223-1 #### REPLACE ME, register your google analytics account if you don't have one ####
 #repo: http://github.com/xunaxu/jekyll-iris
 
 # comments
 comments: true
-disqus_shortname: "xunaxu"
+disqus_shortname: "xunaxu" #### REPLACE ME, register your account at disqus if you don't have one ####
+
+# subscribe
+subscribe: true
+#### REPLACE SUBSCRIBE.HTML in source/_includes, so you can put your own mail chimps subscribe form in####
 
 #share
 email-share: true
 fb-share: true
 twitter-share: true
 linkedin-share: true
-reddit-share: true
+reddit-share: false
 google-plus-share: true
 tumblr-share: false
 pinterest-share: false
+
+##HACKs Really dont wanna type this all the time. Maybe mark down should include a syntax about expand and collapse.
+div-expand: <div class="expand-div">Having trouble? Have a look at my screen, it may help. <button class="toggle-button" >expand</button> <div class="expandable" expanded="false">
+end-div-expand: </div></div>
+
+hint: <div class="hint"><strong> Useful Tips > </strong>
+end-hint: </div>
