@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to Set Up a Blog Site Using Jekyll and Github"
-permalink:  "How to set up your blog site using Jekyll and Github"
+permalink:  "How_To_Set_Up_Your_Blog_Site_Using_Jekyll_and_Github"
 date:   2016-10-21
 ---
 
