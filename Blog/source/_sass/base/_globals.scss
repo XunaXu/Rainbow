@@ -45,18 +45,14 @@ body {
 }
 .expandable[expanded="true"] {
   overflow: auto;
-  border: 2px solid $light-gray-color;
   height: auto;
   visibility:visible;
   opacity: 1;
   @include transition(opacity .15s ease-out);
 
   img{
-    max-width: 250%;
-
-    @include media($min-tablet){
-      max-width: 100%;
-    }
+    max-width: 100%;
+    border: 1px solid $light-gray-color;
   }
 }
 
