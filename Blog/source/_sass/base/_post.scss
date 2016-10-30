@@ -10,7 +10,7 @@
 
   a {
     text-decoration: none;
-    color: $primary-color;
+    color: $dark-primary-color;
 
     &:hover,
     &:focus,
@@ -66,14 +66,15 @@
 
   .post-title{
     color: $dark-gray-color;
-    padding-top: $base-spacing*3;
-    padding-bottom: $base-spacing*3;
-    background-repeat: no-repeat;
-    background-size: 200%;
+    background-color: $primary-color;
+    padding: 4em 0em;
 
-    @include media($max-tablet) {
-      padding-top: $base-spacing;
-      padding-bottom: $base-spacing;
+    @include media($min-tablet) {
+      padding: 6em 0;
+    }
+
+    @include media($min-tablet-large) {
+      padding: 9em 0;
     }
 
     .title{
