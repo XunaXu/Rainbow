@@ -7,6 +7,7 @@
 .post-title,
 .post-meta {
   font-weight: $font-weight-light;
+  color: $dark-gray-color;
 
   a {
     text-decoration: none;
@@ -42,9 +43,14 @@
     margin-bottom: 0px;
 
     .post-link {
-      font-size: 23px;
-      @include media($max-tablet){
-        font-size: 29px;
+      font-size: 21px;
+
+      @include media($min-tablet) {
+        font-size: 23px;
+      }
+
+      @include media($min-tablet-large) {
+        font-size: 25px;
       }
     }
   }
@@ -65,7 +71,7 @@
   padding-bottom: $base-spacing;
 
   .post-title{
-    color: $dark-gray-color;
+    color: $white-color;
     background-color: $primary-color;
     padding: 4em 0em;
 
@@ -79,10 +85,14 @@
 
     .title{
       font-weight: bold;
-      font-size: 30px;
+      font-size: 24px;
 
-      @include media($max-tablet){
+      @include media($min-tablet) {
         font-size: 27px;
+      }
+
+      @include media($min-tablet-large) {
+        font-size: 30px;
       }
     }
   }

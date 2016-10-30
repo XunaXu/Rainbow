@@ -3,9 +3,12 @@
   // border-top: 1px solid $medium-white-color;
   // text-align: center;
   // padding-top: $base-spacing;
+  a {
+    color: $white-color;
+  }
 
-      ul{
-        margin:0;
-        padding: 10px 0;
-      }
+  ul{
+    margin:0;
+    padding: 10px 0;
+  }
 }
